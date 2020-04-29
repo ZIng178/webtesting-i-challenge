@@ -6,7 +6,17 @@ module.exports = {
 };
 
 function succeed(item) {
-  return { ...item };
+  if(item.enhancement<20){
+    const newItem={
+      name:item.name,
+      durability:100,
+      enhancement:item.enhancement+1
+    }
+    return newItem;
+  }else{
+    return item;
+  }
+   
 }
 
 function fail(item) {
